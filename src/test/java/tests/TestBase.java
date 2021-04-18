@@ -24,7 +24,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-        gradle clean test -Dweb.browser=opera
+        gradle clean test -Dweb.browser=chrome;
         Configuration.browser = System.getProperty("web.browser", "chrome");
 
         gradle clean test
