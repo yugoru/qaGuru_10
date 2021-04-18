@@ -24,12 +24,12 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-//        gradle clean test -Dweb.browser=opera
+        gradle clean test -Dweb.browser=opera
         Configuration.browser = System.getProperty("web.browser", "chrome");
 
-//        gradle clean test
-//        gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
-//        gradle clean test -Dremote.web.driver="https://%s:%s@selenoid.autotests.cloud/wd/hub/"
+        gradle clean test
+        gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/"
+        gradle clean test -Dremote.web.driver="https://%s:%s@selenoid.autotests.cloud/wd/hub/"
 
         String remoteWebDriver = System.getProperty("remote.web.driver");
 
@@ -51,8 +51,8 @@ public class TestBase {
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
 
-//        gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/" \
-//        -Dvideo.storage="https://selenoid.autotests.cloud/video/"
+        gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/" \
+        -Dvideo.storage="https://selenoid.autotests.cloud/video/"
         if(System.getProperty("video.storage") != null)
             attachVideo();
         closeWebDriver();
