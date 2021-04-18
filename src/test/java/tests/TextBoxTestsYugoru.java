@@ -14,9 +14,10 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Форма регистрации студента")
-public class TextBoxTestsYugoru extends TestBase {
+public class TextBoxTestsYugoru  {
 
     String firstName = "Ada",
             lastName = "Lovelace",
@@ -171,5 +172,10 @@ public class TextBoxTestsYugoru extends TestBase {
         step("Закрываем форму проверки", () -> {
             $(".modal-content").find(byCssSelector("#closeLargeModal")).click();
         });
+    }
+
+    @Test
+    public void badTest(){
+            assertTrue(false);
     }
 }
